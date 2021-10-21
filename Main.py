@@ -1,3 +1,4 @@
+import os
 import discord
 from discord.embeds import Embed
 from discord.permissions import Permissions
@@ -18,7 +19,9 @@ cogs = CogList.getCogs()
 
 if __name__ == "__main__":   
     
+    token = os.getenv('DISCORD_TOKEN')
+    
     for ext in cogs:
         client.load_extension(ext)
         
-    client.run('ODY3NTY0NzM3NjI0Mjc3MDQy.YPi8oA.j614hLgS4lFTezQrXoexFxDDHxQ')
+    client.run(token)
